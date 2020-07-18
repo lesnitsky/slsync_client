@@ -1,12 +1,7 @@
-name: slsync_client
+name: guaranteed
 description: A new Flutter package project.
 version: 0.0.1
 author:
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
-
-dependencies:
-  guaranteed:
-    path: ../guaranteed
-  http: ^0.12.1
