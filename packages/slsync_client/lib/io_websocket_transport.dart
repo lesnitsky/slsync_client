@@ -53,8 +53,6 @@ class WebSocketTransport<T> extends Transport<T> with HeartbeatMixin {
     _socket.done.then((_) async => await connect(sessionId));
     _socket.done.catchError((_) async => await connect(sessionId));
 
-    heartbeat();
-
     _socket.cast<T>().forEach((event) {
       _messagesController.add(event);
     });
