@@ -45,7 +45,9 @@ void main(List<String> args) async {
     whitelist: whitelist,
   );
 
-  s.join().listen((event) {
+  s.join();
+
+  s.messages.listen((event) {
     print('${DateTime.now()} [Session $id]: $event');
   });
 

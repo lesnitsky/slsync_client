@@ -27,12 +27,11 @@ class Session<T> {
     this.whitelist = const ['*'],
   });
 
-  Stream<T> join() async* {
+  Future<void> join() async {
     assert(transport != null, 'no transport found');
     assert(clientId != null, 'clientId not set');
 
     await transport.connect(id);
-    yield* transport.messages;
   }
 
   Future<void> leave() async {
